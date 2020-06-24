@@ -1,0 +1,38 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+  <h1>Hire me</h1>
+  <p>* Required</p>
+  <div class="form-group">
+    <label for="email">Email Address*</label>
+    <input formControlName="email" type="text" class="form-control" id="email"  />
+    <div *ngIf="email.touched && email.invalid" class="alert alert-danger">An email is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="country">Country*</label>
+    <input formControlName="country" type="text" class="form-control" id="country"  />
+    <div *ngIf="country.touched && country.invalid" class="alert alert-danger">A country is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="job-title">Job Title*</label>
+    <input formControlName="jobTitle" type="text" class="form-control" id="job-title"  />
+    <div *ngIf="jobTitle.touched && jobTitle.invalid" class="alert alert-danger">A job title is required.</div>
+  </div>
+
+  <h3>OPTIONAL INFORMATION</h3>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input formControlName="name" type="text" class="form-control" id="name" />
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone</label>
+    <input formControlName="phone" type="text" class="form-control" id="phone" />
+  </div>
+
+  <button class="btn btn-primary" [disabled]="form.invalid">Hired</button>
+</form>
+
+
+<!--<employee-card email="asdf" country="asdf" jobtitle="asdf" name="1234" phone="asf"></employee-card>-->
